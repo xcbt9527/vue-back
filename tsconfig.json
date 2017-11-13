@@ -9,14 +9,13 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "allowJs": true,
-    "module": "es2015",
-    "target": "es5",
+    "module": "es6",
+    "target": "es6",
     "moduleResolution": "node",
     "isolatedModules": true,
     "lib": [
       "dom",
-      "es5",
-      "es2015.promise"
+      "es6"
     ],
     "sourceMap": true,
     "pretty": true
