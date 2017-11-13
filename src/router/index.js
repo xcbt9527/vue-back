@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from "@/components/index/index";
+import index from '@/components/index/index'
+import article from '@/components/article/article';
+import login from "@/components/login";
 Vue.use(Router)
 
 export default new Router({
@@ -8,12 +10,20 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: index
+      component: index,
+      children: [
+        {path: '/article', component: article}
+      ]
     },
     {
       path: '/index',
       name: 'index',
       component: index
+    }, {
+      path: '/login',
+      name: 'login',
+      component: login
+
     }
   ]
 })

@@ -23,7 +23,6 @@
   import router from "../../router/menu";
   export default {
     name: 'app',
-    router,
     data () {
       return {
         menu: [{
