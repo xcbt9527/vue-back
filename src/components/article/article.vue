@@ -1,11 +1,23 @@
 <template>
-  <Table border :columns="columns7" :data="data6"></Table>
+  <div>
+    <div>
+      <mtextbox title="123" :width="100"></mtextbox>
+    </div>
+    <Table border :columns="columns7" :data="data6" size="small"></Table>
+    <Modal
+      title="Title"
+      v-model="modal"
+      :styles="{top: '20px'}">
+      <p>Content of dialog</p>
+    </Modal>
+  </div>
 </template>
 <script>
   export default {
-    name:'article',
+    name: 'article',
     data () {
       return {
+        modal: false,
         columns7: [
           {
             title: 'Name',
@@ -32,14 +44,15 @@
           {
             title: 'Action',
             key: 'action',
-            width: 150,
+            width: 170,
             align: 'center',
             render: (h, params) => {
               return h('div', [
                 h('Button', {
                   props: {
                     type: 'primary',
-                    size: 'small'
+                    size: 'small',
+                    icon:'edit'
                   },
                   style: {
                     marginRight: '5px'
@@ -49,18 +62,19 @@
                       this.show(params.index)
                     }
                   }
-                }, 'View'),
+                }, '编辑'),
                 h('Button', {
                   props: {
                     type: 'error',
-                    size: 'small'
+                    size: 'small',
+                    icon:'android-delete'
                   },
                   on: {
                     click: () => {
                       this.remove(params.index)
                     }
                   }
-                }, 'Delete')
+                }, '删除')
               ]);
             }
           }
@@ -91,10 +105,7 @@
     },
     methods: {
       show (index) {
-        this.$Modal.info({
-          title: 'User Info',
-          content: `Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${this.data6[index].address}`
-        })
+        this.modal = !this.modal;
       },
       remove (index) {
         this.data6.splice(index, 1);

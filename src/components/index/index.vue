@@ -23,7 +23,7 @@
     </Row>
   </div>
 </template>
-<script>
+<script lang="ts">
   import router from "../../router/menu";
   import mment from"./menu.vue";
   export default {

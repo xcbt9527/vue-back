@@ -19,7 +19,7 @@
   </Col>
 </template>
 
-<script>
+<script lang="ts">
   import router from "../../router/menu";
   export default {
     name: 'app',

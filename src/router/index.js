@@ -1,29 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/components/index/index'
-import article from '@/components/article/article';
-import login from "@/components/login";
 Vue.use(Router)
 
-export default new Router({
+const router =  new Router({
   routes: [
     {
       path: '/',
       name: 'index',
-      component: index,
+      component:  resolve => require(['../components/index/index.vue'], resolve),
       children: [
-        {path: '/article', component: article}
+        {path: '/article', component: resolve => require(['../components/article/article.vue'], resolve)}
       ]
     },
     {
       path: '/index',
       name: 'index',
-      component: index
-    }, {
+      component: resolve => require(['../components/index/index.vue'], resolve)
+    },
+    {
       path: '/login',
       name: 'login',
-      component: login
+      component: resolve => require(['../components/login.vue'], resolve),
 
     }
   ]
 })
+
+export default router;
