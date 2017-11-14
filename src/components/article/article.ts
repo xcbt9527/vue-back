@@ -4,8 +4,9 @@
 
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import html from "./article.html";
 @Component({
-  template: '<span>123</span>',
+  template: html,
   name: 'article',
   components: {}
 })
@@ -95,6 +96,9 @@ export default class article extends Vue {
       address: 'Ottawa No. 2 Lake Park'
     }
   ]
+
+  mounted() {
+  }
 
   show(index) {
     this.modal = !this.modal;
