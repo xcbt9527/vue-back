@@ -1,0 +1,38 @@
+.p-b(@x) {
+  padding-bottom: @x;
+}
+
+.p-l(@x) {
+  padding-left: @x;
+}
+
+.p-r(@x) {
+  padding-right: @x;
+}
+
+.p-t(@x) {
+  padding-top: @x;
+}
+
+.p(@x) {
+  padding: @x;
+}
+
+.funName(@counter) when (@counter < max ) {
+  .p-b-@{counter} {
+    padding: @counterpx;
+  }
+  .funName(( @counter + 1 )); // 递归调用自身
+}
+
+.funName(20);
+
+.bgimgwhile(@counter) when (@counter < 5 ) {
+  .bgimg-@{counter} {
+    //background: url("../images/bgimg-@{counter}-3x.png") no-repeat 0 0;
+    background-size: cover;
+  }
+  .bgimgwhile(( @counter + 1 )); // 递归调用自身
+}
+
+.bgimgwhile(10);

@@ -1,6 +1,11 @@
 <div>
-  <div>
-    <mtextbox  title="123" :width="100"></mtextbox>
+  <div class="p-b-10">
+    <Row>
+      <Col span="18" push="6">
+      <mtextbox  title="文章内容" :width="100" placeholder="请输入具体文章内容"></mtextbox>
+      </Col>
+      <Col span="6" pull="18">col-6 | pull-18</Col>
+    </Row>
   </div>
   <Table border :columns="columns7" :data="data6" size="small"></Table>
   <Modal
