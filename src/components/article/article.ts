@@ -96,7 +96,8 @@ export default class article extends Vue {
       address: 'Ottawa No. 2 Lake Park'
     }
   ]
-
+  mounted() {
+  }
   show(index) {
     this.modal = !this.modal;
   };
