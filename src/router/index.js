@@ -9,7 +9,7 @@ const router =  new Router({
       name: 'index',
       component:  resolve => require(['../components/index/index.vue'], resolve),
       children: [
-        {path: '/article', component: resolve => require(['../components/article/article.vue'], resolve)}
+        {path: '/article', component: resolve => require(['../components/article/article.ts'], resolve)}
       ]
     },
     {

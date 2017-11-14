@@ -74,7 +74,11 @@ module.exports = {
         options: {
           appendTsSuffixTo: [/\.vue$/],
         }
-      }
+      },{
+        test: /\.html$/,
+        loader: 'raw-loader',
+        exclude: /node_modules/
+      },
     ]
   }
 }

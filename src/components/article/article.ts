@@ -4,9 +4,9 @@
 
 import Vue from 'vue';
 import {Component, Watch} from 'vue-property-decorator';
-
+import htmltepl from "./article.html";
 @Component({
-  template: require('./article.html'),
+  template: htmltepl,
   name: 'article',
   components: {}
 })
