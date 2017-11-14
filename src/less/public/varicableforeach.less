@@ -22,20 +22,20 @@
 
 //padding写法
 .m-foreach(@n,@i:1) when (@i <= @n) {
-  .p-l-@{i} {
-    .p-l(0px + @i);
+  .m-l-@{i} {
+    .m-l(0px + @i);
   }
-  .p-r-@{i} {
-    .p-r(0px + @i);
+  .m-r-@{i} {
+    .m-r(0px + @i);
   }
-  .p-t-@{i} {
-    .p-t(0px + @i);
+  .m-t-@{i} {
+    .m-t(0px + @i);
   }
   .p-b-@{i} {
-    .p-b(0px + @i);
+    .m-b(0px + @i);
   }
   .p-f@{i} {
-    .p-f(0px + @i);
+    .m-f(0px + @i);
   }
   .m-foreach(@n, (@i + 1));
 }
