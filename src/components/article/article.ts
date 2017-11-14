@@ -39,7 +39,7 @@ export default class article extends Vue {
     {
       title: 'Action',
       key: 'action',
-      width: 170,
+      width: 180,
       align: 'center',
       render: (h, params) => {
         return h('div', [
