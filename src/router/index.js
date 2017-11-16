@@ -2,20 +2,20 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
-const router =  new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'index',
-      component:  resolve => require(['../components/index/index.vue'], resolve),
+      name: 'layout',
+      component: resolve => require(['../components/index/index.vue'], resolve),
       children: [
-        {path: '/article', component: resolve => require(['../components/article/article.ts'], resolve)}
+        {path: '/article', component: resolve => require(['../components/article/article'], resolve)},
+        {
+          path: '/index',
+          name: 'index',
+          component: resolve => require(['../components/article/article'], resolve)
+        },
       ]
-    },
-    {
-      path: '/index',
-      name: 'index',
-      component: resolve => require(['../components/index/index.vue'], resolve)
     },
     {
       path: '/login',
@@ -26,4 +26,4 @@ const router =  new Router({
   ]
 })
 
-export default router;
+export default router

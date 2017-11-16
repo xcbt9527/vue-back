@@ -33,7 +33,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '*': {
-        target: 'http://192.168.9.160:8874',
+        target: 'localhost:3000',
         //  target: 'http://localhost:8874',
         changeOrigin: true,
         filter: function (pathname, req) {

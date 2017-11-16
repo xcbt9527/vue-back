@@ -17,18 +17,16 @@
         </div>
       </div>
       <div class="layout-copy">
-        2011-2016 &copy; TalkingData
+        2017.11.16 &copy; momoback 764567192
       </div>
       </Col>
     </Row>
   </div>
 </template>
 <script lang="ts">
-  import router from "../../router/menu";
   import mment from"./menu.vue";
   export default {
     name: 'app',
-    router,
     data () {
       return {}
     },

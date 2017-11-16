@@ -20,47 +20,51 @@
 </template>
 
 <script lang="ts">
-  import router from "../../router/menu";
   export default {
     name: 'app',
     data () {
       return {
-        menu: [{
-          name: '1',
-          title: '首页',
-          sub: [{
-            name: '1-1',
-            link: 'article',
-            title: '文章列表'
-          }, {
-            name: '1-2',
-            link: 'article',
-            title: '文章'
-          },]
-        },
+        menu: [
           {
+            name: '1',
+            title: '首页',
+            sub: [{
+              name: '1-2',
+              link: 'index',
+              title: '可视化图'
+            },]
+          }, {
             name: '2',
+            title: '文章管理',
+            sub: [{
+              name: '2-2',
+              link: 'article',
+              title: '文章管理'
+            },]
+          },
+          {
+            name: '3',
             title: '用户',
             sub: [{
-              name: '2-1',
+              name: '3-1',
               link: 'article',
               title: '用户列表'
             }]
           },
           {
-            name: '3',
+            name: '4',
             title: '开发者工具',
             sub: [{
-              name: '3-1',
+              name: '4-1',
               link: 'article',
               title: '代码生成'
             }]
           },
           {
-            name: '4',
+            name: '5',
             title: '系统配置',
             sub: [{
-              name: '4-1',
+              name: '5-1',
               link: 'article',
               title: '全局系统配置'
             }]

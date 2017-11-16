@@ -1,17 +1,28 @@
 <div>
-  <div class="p-b-10">
+  <div class="p-b-5">
     <Row>
-      <Col span="18" push="6">
-      <mtextbox  title="文章内容" :width="100" placeholder="请输入具体文章内容"></mtextbox>
+      <Col span="6">
+      <mtextbox title="文章内容" :width="100" placeholder="请输入具体文章内容"></mtextbox>
       </Col>
-      <Col span="6" pull="18">col-6 | pull-18</Col>
+      <Col push="1" span="1">
+      <Button type="primary" :loading="searchloding" @click="search">
+        <span>搜索</span>
+      </Button>
+      </Col>
+      <Col class="f-r">
+      <Button type="ghost" :loading="addloading" icon="android-add-circle" @click="addarticle" class="t-c">
+      </Button>
+      </Col>
     </Row>
   </div>
   <Table border :columns="columns7" :data="data6" size="small"></Table>
+  <div class="f-r p-t-10">
+    <Page :total="100" show-sizer></Page>
+  </div>
   <Modal
-    title="Title"
+    :title="title"
     v-model="modal"
     :styles="{top: '20px'}">
-    <p>Content of dialog</p>
+    <p>讲你都五信</p>
   </Modal>
 </div>

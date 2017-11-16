@@ -48,7 +48,7 @@ export default {
   post (url, data) {
     return axios({
       method: 'post',
-      baseURL: 'http://192.168.9.160:8874/CH',
+      baseURL: 'http://localhost:3000/api/',
       url,
       data: qs.stringify(data),
       timeout: 10000,

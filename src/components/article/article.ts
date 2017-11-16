@@ -15,6 +15,9 @@ import api from "../../utils/api";
 
 export default class article extends Vue {
   modal: boolean = false;
+  title: string = '编辑';
+  searchloding: boolean = false;
+  addloading:boolean = false;
   columns7: Array<any> = [
     {
       title: 'Name',
@@ -100,15 +103,26 @@ export default class article extends Vue {
   ]
 
   mounted() {
-    src.post("/Template/GetTemplatesByUser", {"templateType": 20002}).then(res => {
-      console.log(res);
-    })
+
   }
 
+  init() {
+    src.post("/user/article", {}).then(res => {
+      console.log(res);
+    })
+  };
+
   show(index) {
+    this.title = '编辑';
     this.modal = !this.modal;
   };
 
+  search() {
+    this.searchloding = true;
+  }
+  addarticle(){
+    this.addloading = true;
+  }
   remove(index) {
     this.data6.splice(index, 1);
   }
