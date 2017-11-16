@@ -5,6 +5,8 @@
 import Vue from 'vue';
 import {Component, Watch} from 'vue-property-decorator';
 import htmltepl from "./article.html";
+import src from '../../utils/http';
+import api from "../../utils/api";
 @Component({
   template: htmltepl,
   name: 'article',
@@ -96,8 +98,13 @@ export default class article extends Vue {
       address: 'Ottawa No. 2 Lake Park'
     }
   ]
+
   mounted() {
+    src.post("/Template/GetTemplatesByUser", {"templateType": 20002}).then(res => {
+      console.log(res);
+    })
   }
+
   show(index) {
     this.modal = !this.modal;
   };
