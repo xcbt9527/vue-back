@@ -17,7 +17,7 @@ export default class article extends Vue {
   modal: boolean = false;
   title: string = '编辑';
   searchloding: boolean = false;
-  addloading:boolean = false;
+  addloading: boolean = false;
   columns7: Array<any> = [
     {
       title: 'Name',
@@ -120,9 +120,11 @@ export default class article extends Vue {
   search() {
     this.searchloding = true;
   }
-  addarticle(){
+
+  addarticle() {
     this.addloading = true;
   }
+
   remove(index) {
     this.data6.splice(index, 1);
   }

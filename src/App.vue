@@ -12,4 +12,5 @@ export default {
 
 <style lang="less">
   @import "less/theme/index";
+  @import "./less/theme/index.less";
 </style>
