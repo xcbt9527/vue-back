@@ -32,16 +32,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '*': {
-        target: 'localhost:3000',
-        //  target: 'http://localhost:8874',
+      '/api': {
+        target: 'http://127.0.0.1:5262/api/',
         changeOrigin: true,
-        filter: function (pathname, req) {
-          return req.method === 'POST';
-        },
-        pathRewrite: function (pathname) {
-          //console.log(pathname);
-          return pathname + '?sessionid=' + sessionid;
+        pathRewrite: {
+          '^/api': ''
         }
       }
     },

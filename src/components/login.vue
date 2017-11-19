@@ -21,6 +21,8 @@
 </template>
 
 <script lang="ts">
+  import src from '../utils/http';
+  import api from "../utils/api";
   export default{
     name: '',
     data() {
@@ -37,8 +39,11 @@
     methods: {
       toLoading(){
         this.loading = true;
-        this.$router.push({name: 'index', params: {userId: 1}});
+//        this.$router.push({name: 'index', params: {userId: 1}});
         this.loading = false;
+        src.post(api.login,{name:this.username,password:this.password}).then(res=>{
+            console.log(res)
+        })
       }
     }
   };

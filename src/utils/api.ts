@@ -3,4 +3,5 @@
  */
 export default {
   right: 'CH/Monitor/Monitor', // 正确路径
+  login:"/api/user/login",
 }

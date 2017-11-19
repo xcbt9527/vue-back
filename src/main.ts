@@ -6,6 +6,8 @@ import App from './App'
 import router from './router';
 import iview from "iview";
 import './components/component';
+import vueResource from "vue-resource";
+Vue.use(vueResource);
 Vue.use(iview);
 import "./less/theme/index.less";
 Vue.config.productionTip = false

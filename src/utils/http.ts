@@ -19,11 +19,12 @@ axios.interceptors.response.use(response => {
   return Promise.resolve(error.response)
 })
 
-function checkStatus (response) {
+function checkStatus(response) {
   // loading
   // 如果http状态码正常，则直接返回数据
+  console.log(response);
   if (response && (response.status === 200 || response.status === 304 || response.status === 400)) {
-    return response
+    return response.data;
     // 如果不需要除了data之外的数据，可以直接 return response.data
   }
   // 异常状态下，把错误信息返回去
@@ -33,7 +34,7 @@ function checkStatus (response) {
   }
 }
 
-function checkCode (res) {
+function checkCode(res) {
   // 如果code异常(这里已经包括网络错误，服务器错误，后端抛出的错误)，可以弹出一个错误提示，告诉用户
   if (res.status === -404) {
     alert(res.msg)
@@ -48,7 +49,7 @@ export default {
   post (url, data) {
     return axios({
       method: 'post',
-      baseURL: 'http://localhost:3000/api/',
+      // baseURL: 'http://127.0.0.1:5262',
       url,
       data: qs.stringify(data),
       timeout: 10000,
@@ -60,16 +61,12 @@ export default {
       (response) => {
         return checkStatus(response)
       }
-    ).then(
-      (res) => {
-        return checkCode(res)
-      }
-    )
+    );
   },
   get (url, params) {
     return axios({
       method: 'get',
-      baseURL: 'https://cnodejs.org/api/v1',
+      // baseURL: 'https://cnodejs.org/api/v1',
       url,
       params, // get 请求时带的参数
       timeout: 10000,
@@ -80,10 +77,6 @@ export default {
       (response) => {
         return checkStatus(response)
       }
-    ).then(
-      (res) => {
-        return checkCode(res)
-      }
-    )
+    );
   }
 }
