@@ -9,7 +9,6 @@ import './components/component';
 import vueResource from "vue-resource";
 Vue.use(vueResource);
 Vue.use(iview);
-import "./less/theme/index.less";
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
