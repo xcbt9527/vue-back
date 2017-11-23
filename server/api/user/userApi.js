@@ -21,7 +21,6 @@ let jsonWrite = function(res, ret) {
 
 // 增加用户接口
 router.post('/login', (req, res) => {
-  console.log(1);
   let sql = $sql.getuserbyinfo;
   let params = req.body;
   console.log(params);
