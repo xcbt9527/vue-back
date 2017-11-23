@@ -12,7 +12,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // 后端api路由
 app.use("/",function (req,res,next) {
-  console.log(req.url);
   next();
 
 })
