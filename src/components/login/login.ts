@@ -22,10 +22,14 @@ export default class article extends Vue {
   loading: boolean = false;
 
   toLoading() {
+    let vm = this;
     this.loading = true;
     src.post(api.login, {username: this.username, password: this.password}).then(res => {
-      // (this.$router as any).push({name: 'index', params: {userId: 1}});
       this.loading = false;
+      if(res) {
+      }else{
+        (this.$router as any).push({name: 'index'});
+      }
     })
   }
 }
