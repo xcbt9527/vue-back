@@ -9,6 +9,7 @@
     data () {
       return {}
     },
+    //接收父传参
     props: {
       title: {
         type: String,
